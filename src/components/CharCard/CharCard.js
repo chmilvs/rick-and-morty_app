@@ -7,7 +7,7 @@ function CharCard({ character={} }) {
     <Card style={{ width: "16rem", marginTop: "2rem" }}>
       <Card.Img variant="top" src={character.image} />
       <Card.Body style={{ display: "flex", justifyContent: "center" }}>
-        <Link to={`/${character.id}`}>{character.name} </Link>
+        <Link to={`${process.env.PUBLIC_URL}/${character.id}`}>{character.name} </Link>
       </Card.Body>
     </Card>
   );

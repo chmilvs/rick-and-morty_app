@@ -11,11 +11,11 @@ function App() {
     <BrowserRouter>
       <Context.Provider value={{ state, dispatch }}>
         <Switch>
-          <Route exact path="/">
+          <Route exact path={`${process.env.PUBLIC_URL}/`}>
             <List />
           </Route>
 
-          <Route path="/:id">
+          <Route path={`${process.env.PUBLIC_URL}/:id`}>
             <CharInfo />
           </Route>
         </Switch>

@@ -34,7 +34,7 @@ function CharInfo() {
             </ListGroupItem>
           </ListGroup>
           <Card.Body>
-            <Link to="/">Back</Link>
+            <Link to={`${process.env.PUBLIC_URL}/`}>Back</Link>
           </Card.Body>
         </Card>
       )}

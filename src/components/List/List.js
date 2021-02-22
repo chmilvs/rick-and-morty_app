@@ -5,15 +5,15 @@ import { Context } from "../../context/context";
 import Loading from "../Loading/Loading";
 import useCharacters from "../../utils/hooks/useCharacters";
 import InfiniteScroll from "react-infinite-scroll-component";
+import {withRouter} from 'react-router-dom';
 
 function List() {
   const { dispatch } = useContext(Context);
   const [page, setPage] = useState(1);
   const [characters, error, loading] = useCharacters(page);
-  console.log(characters);
   useEffect(() => {
     dispatch({ type: "INIT_CHARACTERS", payload: characters });
-  }, [page, characters, dispatch]);
+  }, [page, characters]);
 
   return (
     <InfiniteScroll
@@ -44,4 +44,4 @@ function List() {
   );
 }
 
-export default List;
+export default withRouter(List);

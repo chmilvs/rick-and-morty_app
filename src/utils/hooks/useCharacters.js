@@ -8,7 +8,7 @@ export default function useCharacters(page) {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://rickandmortyapi.com/api/character/?page=${page}`)
+      .get(`${process.env.REACT_APP_URL}?page=${page}`)
       .then((res) => {
         setCharacters([...characters, ...res.data.results]);
         setLoading(false);
