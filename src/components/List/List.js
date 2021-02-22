@@ -10,6 +10,7 @@ function List() {
   const { dispatch } = useContext(Context);
   const [page, setPage] = useState(1);
   const [characters, error, loading] = useCharacters(page);
+  console.log(characters);
   useEffect(() => {
     dispatch({ type: "INIT_CHARACTERS", payload: characters });
   }, [page, characters, dispatch]);

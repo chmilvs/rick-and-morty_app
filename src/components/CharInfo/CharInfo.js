@@ -12,27 +12,33 @@ function CharInfo() {
   const { id } = useParams();
   const searchChar = state.find((char) => char.id == id);
   return (
-    <Card style={{ width: "20rem", marginTop: "2rem" }}>
-      <Card.Img variant="top" src={searchChar.image} />
-      <Card.Body
-        style={{
-          height: "3rem",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Card.Title>{searchChar.name}</Card.Title>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroupItem>Status: "{searchChar.status}"</ListGroupItem>
-        <ListGroupItem>Gender: "{searchChar.gender}"</ListGroupItem>
-        <ListGroupItem>Location: "{searchChar.location.name}"</ListGroupItem>
-      </ListGroup>
-      <Card.Body>
-        <Link to="/">Back</Link>
-      </Card.Body>
-    </Card>
+    <>
+      {searchChar && (
+        <Card style={{ width: "20rem", marginTop: "2rem" }}>
+          <Card.Img variant="top" src={searchChar.image} />
+          <Card.Body
+            style={{
+              height: "3rem",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Card.Title>{searchChar.name}</Card.Title>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>Status: "{searchChar.status}"</ListGroupItem>
+            <ListGroupItem>Gender: "{searchChar.gender}"</ListGroupItem>
+            <ListGroupItem>
+              Location: "{searchChar.location.name}"
+            </ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Link to="/">Back</Link>
+          </Card.Body>
+        </Card>
+      )}
+    </>
   );
 }
 
